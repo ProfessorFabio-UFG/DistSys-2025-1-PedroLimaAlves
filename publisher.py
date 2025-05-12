@@ -28,4 +28,4 @@ while True:
 
     nome = "Pedro Henrique Lima"
     msg_nome = str.encode (f"NOME {nome}")
-    s.send(msg.nome) # Publica meu nome
+    s.send(msg_nome) # Publica meu nome
