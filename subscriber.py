@@ -7,7 +7,7 @@ s = context.socket(zmq.SUB)  # Cria um socket de subscriber
 p = "tcp://" + HOST + ":" + PORT  # Endereço do servidor
 s.connect(p)  # Conecta-se ao servidor
 
-# Inscreve-se para os tópicos TIME, TEMP e HUMIDITY
+# Inscreve-se para os tópicos TIME, TEMP, NOME E MATRÍCULA
 s.setsockopt_string(zmq.SUBSCRIBE, "TIME")      # Assina o tópico TIME
 s.setsockopt_string(zmq.SUBSCRIBE, "TEMP")      # Assina o tópico TEMP
 s.setsockopt_string(zmq.SUBSCRIBE, "NOME")  # Assina o tópico NOME
