@@ -27,4 +27,4 @@ while True:
     # Enviar minha matrícula
     matricula = "202206799"
     msg_matricula = str.encode (f"MATRICULA {matricula}")
-    s.send(msg_matricula) # Publica meu nome
+    s.send(msg_matricula) # Publica minha matrícula
