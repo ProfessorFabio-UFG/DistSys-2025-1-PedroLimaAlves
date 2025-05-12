@@ -18,14 +18,13 @@ while True:
     temp = 22.5 
     msg_temp = str.encode(f"TEMP {temp}")
     s.send(msg_temp)  # Publica a temperatura
-    
-    # Envia a umidade
-    humidity = 60 
-    msg_humidity = str.encode(f"HUMIDITY {humidity}")
-    s.send(msg_humidity)  # Publica a umidade
 
     # Enviar o meu nome
-
     nome = "Pedro Henrique Lima"
     msg_nome = str.encode (f"NOME {nome}")
     s.send(msg_nome) # Publica meu nome
+
+    # Enviar minha matrícula
+    matricula = "202206799"
+    msg_matricula = str.encode (f"MATRICULA {matricula}")
+    s.send(msg_matricula) # Publica meu nome
