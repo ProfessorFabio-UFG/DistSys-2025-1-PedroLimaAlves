@@ -11,7 +11,9 @@ s.connect(p)  # Conecta-se ao servidor
 s.setsockopt_string(zmq.SUBSCRIBE, "TIME")      # Assina o tópico TIME
 s.setsockopt_string(zmq.SUBSCRIBE, "TEMP")      # Assina o tópico TEMP
 s.setsockopt_string(zmq.SUBSCRIBE, "HUMIDITY")  # Assina o tópico HUMIDITY
+s.setsockopt_string(zmq.SUBSCRIBE, "NOME")  # Assina o tópico NOME
 
 for i in range(5):  # Realiza 5 iterações
     msg = s.recv()  # Recebe uma mensagem
     print(bytes.decode(msg))  # Exibe a mensagem
+
