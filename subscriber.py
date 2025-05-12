@@ -1,12 +1,17 @@
 import zmq
-from constPS import * #-
+
+from constPS import *  # Defina suas constantes como HOST e PORT
 
 context = zmq.Context()
-s = context.socket(zmq.SUB)          # create a subscriber socket
-p = "tcp://"+ HOST +":"+ PORT        # how and where to communicate
-s.connect(p)                         # connect to the server
-s.setsockopt_string(zmq.SUBSCRIBE, "TIME")  # subscribe to TIME messages
+s = context.socket(zmq.SUB)  # Cria um socket de subscriber
+p = "tcp://" + HOST + ":" + PORT  # Endereço do servidor
+s.connect(p)  # Conecta-se ao servidor
 
-for i in range(5):  # Five iterations
-	time = s.recv()   # receive a message
-	print (bytes.decode(time))
+# Inscreve-se para os tópicos TIME, TEMP e HUMIDITY
+s.setsockopt_string(zmq.SUBSCRIBE, "TIME")      # Assina o tópico TIME
+s.setsockopt_string(zmq.SUBSCRIBE, "TEMP")      # Assina o tópico TEMP
+s.setsockopt_string(zmq.SUBSCRIBE, "HUMIDITY")  # Assina o tópico HUMIDITY
+
+for i in range(5):  # Realiza 5 iterações
+    msg = s.recv()  # Recebe uma mensagem
+    print(bytes.decode(msg))  # Exibe a mensagem
