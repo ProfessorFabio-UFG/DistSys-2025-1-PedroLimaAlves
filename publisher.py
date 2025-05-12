@@ -14,12 +14,18 @@ while True:
     msg_time = str.encode("TIME " + time.asctime())
     s.send(msg_time)  # Publica a hora atual
     
-    # Envia a temperatura (exemplo fictício)
-    temp = 22.5  # Temperatura fictícia
+    # Envia a temperatura
+    temp = 22.5 
     msg_temp = str.encode(f"TEMP {temp}")
     s.send(msg_temp)  # Publica a temperatura
     
-    # Envia a umidade (exemplo fictício)
-    humidity = 60  # Umidade fictícia
+    # Envia a umidade
+    humidity = 60 
     msg_humidity = str.encode(f"HUMIDITY {humidity}")
     s.send(msg_humidity)  # Publica a umidade
+
+    # Enviar o meu nome
+
+    nome = "Pedro Henrique Lima"
+    msg_nome = str.encode (f"NOME {nome}")
+    s.send(msg.nome) # Publica meu nome
